@@ -1,6 +1,6 @@
 package calculator;
 
-public class Math {
+public class math {
 
     public double addition(double input1, double input2) {
         return input1 + input2;
@@ -18,9 +18,9 @@ public class Math {
         return input1 / input2;
     }
 
-    //public double squared(double input1, double input2) {
-    //     return 
-    // }
+    public double squared(double input1) {
+         return Math.sqrt(input1);
+     }
     public double xtimesitself(double input1) {
         return input1 * input1;
     }

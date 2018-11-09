@@ -12,7 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-//@author Victor Elmkvist
+//@author Victor & Jakob
 public class Calculator extends Application {
 
     @Override
