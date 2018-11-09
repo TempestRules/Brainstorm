@@ -24,5 +24,5 @@ public class Math {
     public double xtimesitself(double input1) {
         return input1 * input1;
     }
-
+    
 }
