@@ -1,6 +1,8 @@
 package calculator;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -61,6 +63,119 @@ public class Calculator extends Application {
         Button btnrbracket = new Button(")");
         Button btndot = new Button(".");
         Button btnequal = new Button("=");
+        
+        //setting actions for buttons
+        //buttons 0-9
+        btn0.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "0");
+        });
+        btn1.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "1");
+        });
+        btn2.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "2");
+        });
+        btn3.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "3");
+        });
+        btn4.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "4");
+        });
+        btn5.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "5");
+        });
+        btn6.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "6");
+        });
+        btn7.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "7");
+        });
+        btn8.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "8");
+        });
+        btn9.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "9");
+        });
+        //button operations
+        btnx2.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btnxy.setOnAction((ActionEvent event) -> {
+            //should read last written full number and then take next written full number
+        });
+        btnsin.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btncos.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btntan.setOnAction((ActionEvent event) -> {
+           //should immediately calculate on last written full number
+        });
+        btnsqrt.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btn10x.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btnlog.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btnexp.setOnAction((ActionEvent event) -> {
+            //should immediately calculate on last written full number
+        });
+        btnmod.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "Mod");
+        });
+        btnarrow.setOnAction((ActionEvent event) -> {
+            //used to change certain operations in windows might be useless for us
+        });
+        btnce.setOnAction((ActionEvent event) -> {
+            //should recognise last full number/operation and clear it
+        });
+        btnc.setOnAction((ActionEvent event) -> {
+            textfield.setText("");
+        });
+        btndelete.setOnAction((ActionEvent event) -> {
+            CharSequence string = textfield.getCharacters();
+            if (string.length() > 0) {
+                string = string.subSequence(0, string.length()-1);
+                textfield.setText(string.toString());
+            }
+        });
+        btndivide.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "÷");
+        });
+        btnpi.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "π");
+        });
+        btnmultiply.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "×");
+        });
+        btnn.setOnAction((ActionEvent event) -> {
+            //add factorial
+        });
+        btnminus.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "-");
+        });
+        btnsign.setOnAction((ActionEvent event) -> {
+            //should recognise a number and insert the sign-bit before it
+        });
+        btnplus.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "+");
+        });
+        btnlbracket.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + "(");
+        });
+        btnrbracket.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + ")");
+        });
+        btndot.setOnAction((ActionEvent event) -> {
+            textfield.setText(textfield.getCharacters() + ".");
+        });
+        btnequal.setOnAction((ActionEvent event) -> {
+            //should call a function that reads the string and converts it into understandable math for java
+        });
         
         //position of buttons in grid
         //buttons 0-9
@@ -185,7 +300,6 @@ public class Calculator extends Application {
         btndot.setMaxWidth(maxWidth);
         btnequal.setMaxWidth(maxWidth);
         //input field
-        textfield.setMaxWidth(200);
 
     }
 
