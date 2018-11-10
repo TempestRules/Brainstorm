@@ -1,6 +1,6 @@
 package calculator;
 
-public class math {
+public class calculations {
 
     public double addition(double input1, double input2) {
         return input1 + input2;
