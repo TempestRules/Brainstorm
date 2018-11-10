@@ -2,7 +2,6 @@ package calculator;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -125,7 +124,7 @@ public class Calculator extends Application {
             //should immediately calculate on last written full number
         });
         btnmod.setOnAction((ActionEvent event) -> {
-            textfield.setText(textfield.getCharacters() + "Mod");
+            //should read last written full number and then take next written full number
         });
         btnarrow.setOnAction((ActionEvent event) -> {
             //used to change certain operations in windows might be useless for us
@@ -299,7 +298,6 @@ public class Calculator extends Application {
         btnrbracket.setMaxWidth(maxWidth);
         btndot.setMaxWidth(maxWidth);
         btnequal.setMaxWidth(maxWidth);
-        //input field
 
     }
 
