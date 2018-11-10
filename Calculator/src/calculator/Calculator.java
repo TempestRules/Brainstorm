@@ -3,6 +3,7 @@ package calculator;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -17,7 +18,11 @@ public class Calculator extends Application {
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
-
+        
+        //creating input field
+        TextField textfield = new TextField();
+        textfield.setText("");
+        
         //creating buttons
         //buttons 0-9
         Button btn0 = new Button("0");
@@ -56,7 +61,7 @@ public class Calculator extends Application {
         Button btnrbracket = new Button(")");
         Button btndot = new Button(".");
         Button btnequal = new Button("=");
-
+        
         //position of buttons in grid
         //buttons 0-9
         gridpane.add(btn0, 2, 6);
@@ -95,7 +100,9 @@ public class Calculator extends Application {
         gridpane.add(btnrbracket, 1, 6);
         gridpane.add(btndot, 3, 6);
         gridpane.add(btnequal, 4, 6);
-
+        //input field
+        gridpane.add(textfield, 0, 7, 5, 1);
+        
         // set min width of all buttons
         int minWidth = 50;
         //buttons 0-9
@@ -135,6 +142,8 @@ public class Calculator extends Application {
         btnrbracket.setMinWidth(minWidth);
         btndot.setMinWidth(minWidth);
         btnequal.setMinWidth(minWidth);
+        //input field
+        textfield.setMinWidth(200);
 
         //set max width of all buttons
         int maxWidth = 50;
@@ -175,6 +184,8 @@ public class Calculator extends Application {
         btnrbracket.setMaxWidth(maxWidth);
         btndot.setMaxWidth(maxWidth);
         btnequal.setMaxWidth(maxWidth);
+        //input field
+        textfield.setMaxWidth(200);
 
     }
 
