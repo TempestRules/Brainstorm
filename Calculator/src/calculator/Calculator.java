@@ -1,16 +1,9 @@
 package calculator;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 //@author Victor & Jakob
@@ -24,8 +17,8 @@ public class Calculator extends Application {
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
-    //creating buttons
+
+        //creating buttons
         //buttons 0-9
         Button btn0 = new Button("0");
         Button btn1 = new Button("1");
@@ -63,10 +56,8 @@ public class Calculator extends Application {
         Button btnrbracket = new Button(")");
         Button btndot = new Button(".");
         Button btnequal = new Button("=");
-        
-        
-        
-    //position of buttons in grid
+
+        //position of buttons in grid
         //buttons 0-9
         gridpane.add(btn0, 2, 6);
         gridpane.add(btn1, 1, 5);
@@ -104,8 +95,8 @@ public class Calculator extends Application {
         gridpane.add(btnrbracket, 1, 6);
         gridpane.add(btndot, 3, 6);
         gridpane.add(btnequal, 4, 6);
-        
-    // set min width of all buttons
+
+        // set min width of all buttons
         int minWidth = 50;
         //buttons 0-9
         btn0.setMinWidth(minWidth);
@@ -144,8 +135,8 @@ public class Calculator extends Application {
         btnrbracket.setMinWidth(minWidth);
         btndot.setMinWidth(minWidth);
         btnequal.setMinWidth(minWidth);
-        
-    //set max width of all buttons
+
+        //set max width of all buttons
         int maxWidth = 50;
         //buttons 0-9
         btn0.setMaxWidth(maxWidth);
@@ -184,11 +175,11 @@ public class Calculator extends Application {
         btnrbracket.setMaxWidth(maxWidth);
         btndot.setMaxWidth(maxWidth);
         btnequal.setMaxWidth(maxWidth);
-        
+
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
