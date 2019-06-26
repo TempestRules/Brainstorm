@@ -42,11 +42,11 @@
       <Pane fx:id="centerPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutY="55.0" text="Input 1" />
-            <TextField fx:id="txtFieldInput1" layoutY="72.0" onAction="#handleTxtFieldInput1Action" />
-            <Label layoutY="97.0" text="Input 2" />
-            <TextField fx:id="txtFieldInput2" layoutY="115.0" onAction="#handleTxtField2Action" />
+            <TextField fx:id="inputTF" layoutY="72.0" />
             <Label fx:id="labelResult" layoutY="162.0" text="Result" />
-            <TextField fx:id="txtFieldResult" layoutY="179.0" onAction="#handleTxtFieldResultAction" />
+            <TextField fx:id="resultTF" layoutY="179.0" />
+            <TextField fx:id="inputTF2" layoutY="115.0" />
+            <Label layoutX="2.0" layoutY="97.0" text="Input 2" />
          </children>
       </Pane>
    </center>

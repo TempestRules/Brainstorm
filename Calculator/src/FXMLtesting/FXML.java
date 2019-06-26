@@ -14,6 +14,8 @@ public class FXML extends Application {
         
         Scene scene = new Scene(root);
         
+        stage.setTitle("Calculator");
+        
         stage.setScene(scene);
         stage.show();
     }
