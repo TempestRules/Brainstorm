@@ -1,4 +1,4 @@
-#Password manager
+# Password manager
 
 This is a small password manager project.
 
@@ -6,4 +6,4 @@ This is a small password manager project.
 
 - No GUI, works with terminal.
 
-- The user can type a domain and receive their login information. 
+- The user can give their email or a site/application and receive their login information. 
