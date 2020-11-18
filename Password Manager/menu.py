@@ -15,10 +15,8 @@ def menu():
 def addAccount():
     print('Please provide the name of the site or application')
     appName = input()
-    print('Please provide the password for the account: ')
+    print('Please provide the password for the account (No spaces, numbers, or special characters): ')
     password = input()
-    hashAndSalt = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
-
     print('-'*30)
     print('Please provide the email used to create the account')
     email = input()
@@ -27,7 +25,7 @@ def addAccount():
     print('Please provide the url to the site the account is created with')
     url = input()
     # Database function, stores given info.
-    storeAccount(username, hashAndSalt, email, appName, url)
+    storeAccount(username, password, email, appName, url)
 
 # Returns the password based on the site the account belongs to.
 def getPassword():
