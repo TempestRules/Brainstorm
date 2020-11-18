@@ -1,1 +1,1 @@
-//Shall contain hashing functions
+# Safety?

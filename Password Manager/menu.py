@@ -1,4 +1,4 @@
-from database import storeAccount, getAccounts, getPasswd
+from dataMysql import storeAccount, getAccounts, getPasswd
 
 # Shows a basic menu with options for the user.
 def menu():
@@ -17,7 +17,7 @@ def addAccount():
     appName = input()
     print('Please provide the password for the account: ')
     password = input()
-    # hashedPasswd = HASH THE GIVEN PASSWORD
+    hashAndSalt = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 
     print('-'*30)
     print('Please provide the email used to create the account')
@@ -27,7 +27,7 @@ def addAccount():
     print('Please provide the url to the site the account is created with')
     url = input()
     # Database function, stores given info.
-    storeAccount(username, password, email, appName, url)
+    storeAccount(username, hashAndSalt, email, appName, url)
 
 # Returns the password based on the site the account belongs to.
 def getPassword():
