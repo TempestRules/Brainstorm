@@ -4,14 +4,14 @@ mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="secure",
-    datebase="accounts"
+    datebase="users"
 )
 
 # Storing given information in database.
 def storeAccount(username, passwd, email, appName, url):
     mycursor = mydb.cursor()
 
-    accountQuery = "INSERT INTO accounts (username, password, email, appName, url) VALUES (%s, %s, %s, %s, %s)"
+    accountQuery = "INSERT INTO accounts (username, password, email, appName, url_address) VALUES (%s, %s, %s, %s, %s)"
     values = (username, passwd, email, appName, url)
 
     mycursor.execute(accountQuery, values)
