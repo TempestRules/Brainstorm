@@ -1,4 +1,5 @@
 import mysql.connector
+from encryption import encrypt, decrypt
 
 def connection():
     mydb = mysql.connector.connect(
@@ -16,8 +17,10 @@ def storeAccount(username, password, email, appName, url):
         db = connection()
         cursor = db.cursor()
 
-        accountQuery = "INSERT INTO accounts (username, passwd, email, appName, url_address) VALUES (%s, %s, %s, %s, %s)"
-        values = (username, password, email, appName, url)
+        encryption = encrypt(password)
+
+        accountQuery = "INSERT INTO accounts (username, passwd, email, appName, url_address, enckey) VALUES (%s, %s, %s, %s, %s, %s)"
+        values = (username, encryption[0], email, appName, url, encryption[1])
 
         cursor.execute(accountQuery, values)
         db.commit()
@@ -31,7 +34,7 @@ def getPasswd(appName):
         db = connection()
         cursor = db.cursor()
     
-        passwdQuery = "SELECT passwd FROM accounts WHERE appName =%s"
+        passwdQuery = "SELECT passwd, enckey FROM accounts WHERE appName =%s"
         val = (appName, )
 
         cursor.execute(passwdQuery, val)
@@ -39,7 +42,9 @@ def getPasswd(appName):
 
         db.close()
 
-        print("Your password is: ", result[0])
+        decryption = decrypt(result[0], result[1])
+
+        print("Your password is: ", decryption)
 
     except Exception as e:
         print('Error: ', e)
@@ -64,10 +69,39 @@ def getAccounts(email):
         print('Accounts: ')
         print('')
         for row in result:
-            for i in range(0, len(row)-1):
-                print(info[i] + row[i])
+            for i in range(0, 5):
+                if i == 1:
+                    decryption = decrypt(row[1], row[5])
+                    print(info[i] + decryption)
+                else:
+                    print(info[i] + row[i])
+
             print('--------------------------------------')
         print('')
         print('-'*30)
     except Exception as e:
         print('Error: ', e)
+
+def checkMaster(master):
+    valid = False
+
+    try:
+        db = connection()
+        cursor = db.cursor()
+    
+        masterQuery = "SELECT passwd, enckey FROM accounts WHERE username ='master'"
+
+        cursor.execute(masterQuery)
+        result = cursor.fetchone()
+
+        db.close()
+
+        decryption = decrypt(result[0], result[1])
+
+        if master == decryption:
+            valid = True
+        return valid
+
+    except Exception as e:
+        print('Error: ', e)
+        

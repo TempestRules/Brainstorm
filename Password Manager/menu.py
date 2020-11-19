@@ -1,4 +1,4 @@
-from dataMysql import storeAccount, getAccounts, getPasswd
+from dataMysql import storeAccount, getAccounts, getPasswd, checkMaster
 
 # Shows a basic menu with options for the user.
 def menu():
@@ -40,4 +40,13 @@ def getLogins():
     email = input()
     # Database function, returns accounts based on email.
     getAccounts(email)
+
+# Verifies master password.
+def verifyMaster(master):
+    if checkMaster == False:
+        print('Wrong master')
+        print('Shutdown')
+        exit()
+    else:
+        print('Welcome')
     

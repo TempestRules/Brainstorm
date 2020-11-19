@@ -6,7 +6,6 @@ def createKey():
 def encrypt(text):
     result = ""
     s = createKey()
-    print(s)
     # transverse the plain text
     for i in range(len(text)):
         char = text[i]
@@ -26,11 +25,11 @@ def decrypt(text, s):
     # transverse the plain text
     for i in range(len(text)):
         char = text[i]
-        # Encrypt uppercase characters in plain text
+        # Decrypt uppercase characters in plain text
       
         if (char.isupper()):
             result += chr((ord(char) + s-65) % 26 + 65)
-        # Encrypt lowercase characters in plain text
+        # Decrypt lowercase characters in plain text
         else:
             result += chr((ord(char) + s - 97) % 26 + 97)
     return result
