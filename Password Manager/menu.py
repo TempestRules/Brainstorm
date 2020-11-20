@@ -43,7 +43,7 @@ def getLogins():
 
 # Verifies master password.
 def verifyMaster(master):
-    if checkMaster == False:
+    if checkMaster(master) == False:
         print('Wrong master')
         print('Shutdown')
         exit()
